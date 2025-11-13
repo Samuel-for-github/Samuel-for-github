@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Samuel Fernandes</h1>
 <h3 align="center">A passionate Software Engineering Student</h3>
 
-- 🔭 I’m currently working on **Edu Saathi**
+- 🔭 I have worked in **Edu Saathi**
 
 - 🌱 I’m currently learning **Cyber Security, Mobile App Development, Dodot**
 
