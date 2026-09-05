@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Samuel Fernandes — Software Engineering Student and Developer." />
+  <title>Samuel Fernandes | Developer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(10, 10, 10, 0.82);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #222;
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .logo span {
+      color: #888;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      list-style: none;
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      color: #888;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 9vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: #777;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      color: #aaa;
+      font-size: 1.15rem;
+      margin-bottom: 34px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: #777;
+    }
+
+    section {
+      padding: 100px 0;
+      border-top: 1px solid #1e1e1e;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 35px;
+      letter-spacing: -0.03em;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 50px;
+    }
+
+    .about p {
+      color: #aaa;
+      font-size: 1.05rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .skill {
+      padding: 8px 13px;
+      border: 1px solid #292929;
+      border-radius: 999px;
+      color: #bbb;
+      background: #111;
+      font-size: 0.9rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      padding: 28px;
+      min-height: 210px;
+      border: 1px solid #242424;
+      border-radius: 12px;
+      background: #0e0e0e;
+      transition: 0.25s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: #555;
+    }
+
+    .project h3 {
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      color: #888;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .project a {
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+
+    .contact-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding: 35px;
+      border: 1px solid #242424;
+      border-radius: 14px;
+      background: #0e0e0e;
+    }
+
+    .contact-box p {
+      color: #888;
+      margin-top: 8px;
+    }
+
+    footer {
+      padding: 35px 0;
+      color: #666;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a class="logo" href="#">Samuel<span>.dev</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">SOFTWARE ENGINEERING • WEB • AI</div>
+
+        <h1>
+          Samuel<br />
+          <span>Fernandes.</span>
+        </h1>
+
+        <p class="hero-description">
+          Software Engineering student building web applications,
+          AI-powered solutions, and practical developer tools.
+        </p>
+
+        <div class="buttons">
+          <a class="btn primary"
+             href="https://github.com/Samuel-for-github"
+             target="_blank"
+             rel="noopener">
+            GitHub
+          </a>
+
+          <a class="btn" href="#projects">View Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="about">
+          <div>
+            <h2 class="section-title">About</h2>
+          </div>
+
+          <div>
+            <p>
+              I'm a software engineering student interested in building
+              useful, reliable software. My interests include modern
+              JavaScript development, backend systems, AI applications,
+              and cybersecurity.
+            </p>
+
+            <div class="skills">
+              <span class="skill">JavaScript</span>
+              <span class="skill">TypeScript</span>
+              <span class="skill">React</span>
+              <span class="skill">Node.js</span>
+              <span class="skill">Express</span>
+              <span class="skill">AI / RAG</span>
+              <span class="skill">Cybersecurity</span>
+              <span class="skill">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Selected Projects</h2>
+
+        <div class="projects">
+
+          <article class="project">
+            <h3>Leave Management</h3>
+            <p>
+              A web-based leave management system with separate
+              frontend, backend, and administration components.
+            </p>
+            <a href="https://github.com/Samuel-for-github"
+               target="_blank"
+               rel="noopener">
+              View on GitHub →
+            </a>
+          </article>
+
+          <article class="project">
+            <h3>AI Applications</h3>
+            <p>
+              Exploring AI-powered applications, retrieval-augmented
+              generation, document processing, and intelligent search.
+            </p>
+            <a href="https://github.com/Samuel-for-github"
+               target="_blank"
+               rel="noopener">
+              View GitHub →
+            </a>
+          </article>
+
+          <article class="project">
+            <h3>Web Development</h3>
+            <p>
+              Building responsive web applications using modern
+              frontend and backend technologies.
+            </p>
+            <a href="https://github.com/Samuel-for-github"
+               target="_blank"
+               rel="noopener">
+              Explore repositories →
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <h2>Let's connect.</h2>
+            <p>Have a project, idea, or opportunity?</p>
+          </div>
+
+          <a class="btn primary"
+             href="https://github.com/Samuel-for-github"
+             target="_blank"
+             rel="noopener">
+            GitHub Profile
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Samuel Fernandes · Built with HTML & CSS
+  </footer>
+
+</body>
+</html>
